@@ -1,0 +1,122 @@
+
+
+/* sliding 용 */
+/* section{
+  height: 700px;;
+  background-color: none;
+
+} */
+
+
+/* sliding 용 */
+h1{
+  width:auto;
+  height: 145px;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   border: 0px solid red;
+  animation: all .6s ease-out;
+  font-size: 1.6em;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+h4{
+  width:380px;
+  height: 20px;
+  position: absolute;
+  top: 27%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px solid red;
+  color: white;
+  animation: all 1.4s ease-out;
+ 
+}
+@keyframes all {
+  from{
+   left: -100%;
+   opacity: 0;
+  }
+  to{
+    left: 50%;
+   opacity: 1;
+
+  }
+}
+
+@media(max-width:800px){
+/* sliding 용 */
+h1{
+  width:auto;
+  height: 150px;
+  position: absolute;
+  /* top: 10%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+   border: 0px solid red;
+  animation: all .6s ease-out;
+  font-size: 1.6em;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+h4{
+  width:360px;
+  height: 25px;
+  position: absolute;
+  top: 25%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px solid red;
+  color: white;
+  animation: all 1.2s ease-out;
+ 
+  }
+  @keyframes all {
+    from{
+     left: -100%;
+     opacity: 0;
+    }
+    to{
+      left: 50%;
+     opacity: 1;
+  
+    }
+  }
+
+}
+/*   
+
+@keyframes all {
+  from{
+   left: -100%;
+   opacity: 0;
+  }
+  to{
+    left: 48%;
+   opacity: 1;
+
+  }
+  }  */
+
+
+
+/* @keyframes fadein {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+@-webkit-keyframes fadein { 
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+/* Safari and Chrome */
+
+
