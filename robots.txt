@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: http://grammar.hubweb.net/sitemap.xml
