@@ -1,0 +1,374 @@
+
+:root {
+    ---white-color:whitesmoke;
+   
+    --text-color:whitesmoke;
+    --blue: dodgerblue;
+    --red-color: #ff0000;
+    --grey-dark-color: #cac2c2;
+    --grey-light-color: #ede9e5;
+    --white: whitesmoke;
+
+    --black: rgb(14, 14, 14);
+    --background-color: rgb(0, 0, 0); 
+    --accent: rgb(232, 232, 30); 
+    --gold: gold;
+ }
+
+/* 이  css 는 메뉴와 바디 기본틀만 관여 */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+    html{
+        font-size: 1rem;
+        scroll-behavior: smooth; 
+        scroll-snap-type: y mandatory;
+        scroll-padding-top: 70px;
+     }
+
+    
+body{
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    color: inherit;
+    position: relative;
+    height: 111%; 
+    /* 첫화면 배경높이 */
+    overflow-x: hidden;
+    background: var(--black);
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* background-image: linear-gradient(rgba(30,30,30, 0.5), rgba(30,30,30, 0.5)),url(./images/lib-pic9.jpg); */
+    -ms-overflow-style: none;
+}
+
+
+
+body::-webkit-scrollbar {
+display: none; 
+}
+/* 스크롤바*/
+
+
+
+/* 이  css 는 메뉴와 바디 기본틀만 관여 */
+
+
+.font{
+   color: yellow;
+}
+.font1{
+    color: yellowgreen
+ }
+.font2{
+    color:whitesmoke;
+    font-size: 1.4rem;
+ }
+ .font3{
+    display: inline-block;
+    color:whitesmoke;
+    font-size: 1.7rem;
+ }
+ .font4{
+    color:gold;
+    font-size: 1rem;
+ }
+ .font5{
+    color:gold;
+    font-size: 1rem;
+ }
+ .font6{
+    color:darkgray;
+    font-size: 0.9rem;
+ }
+
+header{
+    position: fixed;
+    top: 0px;
+    height: 71px;
+    width: 100%;
+    border: 0px solid  yellow; 
+   
+    
+}
+
+
+li{
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--white);
+    
+    
+}
+
+a{
+    
+    text-decoration: none;
+}
+
+/* 이  css 는 메뉴와 바디 기본틀만 관여 */
+.container{
+    display: block;
+    position: fixed;    
+    width: 100%;
+    margin: 0 auto;
+    border: 0px solid  yellow; 
+    overflow-x: hidden;
+    background: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./images/lib-pic9.jpg);
+    z-index: 1;
+       
+}
+.subcontainer{
+    width: 80%;/* 모바일 아이프레임 꽉참 */
+    margin: 0px auto;  /* top 마진 주면 바탕화면 스티키 현상 */
+    border: 0px solid  sandybrown; 
+}
+
+
+
+.navbar{
+    display: flex;
+    position: sticky;
+    top:6px;
+    width: 100%;
+    height: 4.2em;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0%;
+    padding-right: 0%;
+    align-items: center;    /* vertical center */
+    border: 0px solid red;
+    background-color: var(--black);
+    
+}
+
+.nav-menu{
+    position: absolute;
+    right: 25px;
+    display: flex;
+    justify-content: space-around;
+    gap:5px;
+    align-items: center;
+    list-style: none;
+    padding: 0.5% 1%;
+    
+    font-size: 0.8rem;
+    border: 0px solid  blue;
+   
+ }
+
+
+ .nav-menu li{
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 10px 6px;
+    border: 0px solid  blue; 
+    
+ }
+
+ .nav-menu li:hover {
+    color: var(--gold);
+    background-color: var(--blue);
+    border-radius: 4px;
+    text-decoration: none;
+    
+ }
+
+ 
+.nav-branding{    
+   
+    margin-left: 2%; 
+    width: auto;    
+    height: 2.8rem;  
+    padding-top: 5px;
+    /* border: 1px solid  blue; */
+}
+
+
+.hamburger{
+
+    display: block;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    border: 0px solid  blue; 
+    border-radius: 5px;
+    
+    
+    
+}
+
+.bar{
+    display: var(--white);
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    transition: all 0.6s ease;
+   
+    
+
+   
+}
+.line {
+    position: absolute;
+     top: 3.3rem;
+     text-align: center; 
+     width: 90%;
+     margin-left: 2%;
+     color: darkgray
+ }
+
+
+
+#Home{
+    margin-top: 70px;
+    margin-bottom: 0px;
+    border: 0px solid blue;
+    height: 144vh;
+    color: greenyellow;
+}
+
+/* 이  css 는 메뉴와 바디 기본틀만 관여 */
+
+@media(max-width:800px){
+    header{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 4.4em;
+        z-index: 111;
+    }
+   
+    .font3{
+        color: var(--white);
+        font-size: 1.4rem;
+     }
+    .navbar{
+        display: flex;
+        position: sticky;
+        top:0px;
+        width: 100%;
+        height: 67px;
+        z-index: 111;
+        border: 0px solid blue;  
+        
+    }
+    .nav-branding{
+        width: auto;
+        display: block;
+        font-size: 1.5rem;
+        border: 0px solid blue;
+    }
+    
+    
+    .hamburger{
+        display: block;
+        padding: 3px 5px;
+        margin-right: 12px;
+        /* background-color:var(--black-color); */
+        margin-top: 6px;
+        border: 0px solid blue;
+               
+     }
+
+     .bar{
+        display: block;        
+        background-color: var(--white);
+       
+               
+     }
+     
+    
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: 100%;/*오른쪽으로 숨기기 위함*/
+        top: 70px;/*메뉴바에 붙게*/
+        gap: 0px;/*아이템 간격배치*/
+        padding-left: 51px;/*아이템 좌우 간격배치*/
+        border: 0px solid gold;
+        align-items: start;
+        flex-direction: column;
+        /* background: #000; */
+        background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8));
+        width: 100%;
+        transition: all 0.7s ease-in-out; 
+
+         
+    }
+    .nav-menu li{
+        width: 110%;
+        padding-left: 2%;
+        font-size: 1rem;
+        text-align: center;
+        color: var(--white);
+        font-weight: 700;
+        border: 0px solid blue;
+    }
+    
+
+    .nav-item{
+        margin: 0px -42px;/* 모바일 list gap */      
+    }
+    .nav-menu.active{
+        left: 0%;/*모바일 메뉴창 좌우이동 */
+        width: 100%;
+        top: 69px;/*메뉴바에 붙게*/      
+        border: 0px solid red;
+  
+}
+.nav-menu li:hover {
+   
+    background-color: var(--blue);
+    color: var(--gold);
+    border-radius: 6px;
+    text-decoration: none;
+    
+ }
+
+.subcontainer{
+    width: 100%;/* 모바일 아이프레임 꽉참 */
+    margin: 0 auto;  /* top 마진 주면 바탕화면 스티키 현상 */
+    border: 0px solid  yellow; 
+  
+}
+
+body{
+    -ms-overflow-style: none;
+    }
+    
+   ::-webkit-scrollbar {
+     display: none;
+   }
+   
+   /*특정 부분 스크롤바 없애기*/
+   
+   .box{
+      -ms-overflow-style: none;
+   }
+   .box::-webkit-scrollbar{
+     display:none;
+   }
+
+}  
