@@ -1,0 +1,373 @@
+:root {
+  --accent: rgb(232, 232, 30); 
+  --white: whitesmoke;
+  --black: rgb(0, 0, 0);
+  --blue: dodgerblue;
+  --skyblue: rgb(69, 163, 200);
+  --red: red;
+  --beige: rgb(245, 245, 213);
+  --darkpink: #e23c7c;
+  --darkgreen: #01c9c9;
+  --lightgreen: #7aa605;
+  --grey-dark-color: #cac2c2;
+  --grey-light-color: #ede9e5;  
+  --background-color: rgb(0, 0, 0); 
+  --darkgray: darkgray;
+  --gold: gold;
+  --darkblue: rgb(0, 92, 183);
+
+}
+
+*{
+ margin: 0; 
+ padding: 0;
+ box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+
+}
+html{
+  font-size: 1rem;
+ scroll-behavior: smooth; 
+}
+body{
+  font-size: 1.1em;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  /* background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  /* 스크롤바 */
+  /* -ms-overflow-style: none;  */
+}
+/*  00  */
+body::-webkit-scrollbar {
+display: none;
+}
+/* 스크롤바 */
+
+
+li{
+  list-style: none;
+}
+
+  table {
+   
+    font-size: 1em; /* theader 글자크기관여 */
+    width: 755px;
+    text-align: center;
+    /* border-collapse: collapse;  */
+    margin: 0 auto;        
+    border: 0px solid gold;
+    border-collapse: separate;
+    border-spacing: 5px 8px;
+  } 
+
+  th {
+    display: inline-flexbox;
+    position:sticky;
+    top:-3px;
+    padding: 0.5em 0.2em;
+    text-align: left;
+    background-color: rgb(14, 14, 14);
+    color: var(--darkpink); /* theader 글자 #d8d8d8;*/
+    border: 1px solid green;    
+    font-size: 1em;
+  }
+
+  td {
+    font-size: 1.1em;/* role word 크기와 칸 간격 */
+    font-weight: 700;
+    border: 1px solid rgba(105, 146, 105, 0.6);
+    /* border: 0.01rem solid rgba(58, 58, 58, 0.6); */
+    padding: 0.1em 0.5em; 
+    color:  var();    /* table 역할어(will) 색 */
+    text-align: left;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border: 0px solid red;    
+  } 
+
+  .none{
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  } /* table thead 앞공백*/
+  
+
+.table{
+    
+    width: 45em; 
+    
+    position: relative;    
+    margin: 0 auto;
+    margin-top: 1%;
+    /* border: 0px solid gold; */
+    
+}
+.table tr:hover td {
+  background-color: var(--blue);
+  color: var(--gold);
+  border-radius: 9px;
+}
+.table-title {  
+    font-size: 1.2em; 
+    text-decoration: underline solid 2px; 
+    text-decoration-color: var(--white); 
+    text-underline-position: under;
+    color: var();
+    font-weight: 700;  
+    margin: 0 auto;
+    padding-left:20%;
+     /* border: 1px solid blue; */
+}
+
+
+.td-word {
+  text-align: start;
+  text-decoration:none;
+  /* color: var(--white); */
+  font-size: .9em;/* 역할기능과 작용개념 글자 */
+  border-radius: 9px;
+  font-weight: 600; /* 역할기능과 작용개념 글자 */
+  
+  /* border: 1px solid blue; */
+}
+
+
+
+
+
+
+.table-p{/* 상황시제용 */
+  font-size: 0.85em;
+  color: var(--darkgray);
+ 
+  /* 상황시제용 */
+}
+
+ .center-hr  {
+    width: 58%;    
+    display: block; 
+    margin: 0 auto;
+    
+    
+} 
+
+
+@media(max-width:800px){
+  body{
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+   
+  }
+  table {
+    
+    width:780px;
+    text-align: left;
+    /* border-collapse: collapse;  */
+    margin: 0px auto;
+    color: var();/* theader 글자색
+    /* overflow-x: hidden; */
+    font-size: 1em; 
+    background-color: none;
+    border: 0px solid gold;
+    border-collapse: separate;
+    /* border-spacing: 5px 2px; */
+    }  
+  /* .table {
+    
+    width: 600px;
+    position: relative;    
+    margin-top: 1%;
+    
+    border: 1px solid gold;   
+
+  } */
+  th {
+    display: inline-flexbox;
+    position:sticky;
+    top:-8px;
+    
+    padding: 0.5em 0.2em;
+    text-align: left;
+    background-color: none;
+    color: var();
+    /* text-decoration: underline; */
+    /* border-top: 0;
+    border-right: 0;
+    border-bottom-style: dotted;
+    border-bottom-color: var(--grey-dark-color);
+    border-left-style: dotted;
+    border-left-width: 0.5px; */
+    border: 1px solid green; 
+    font-size: 1em;   
+  }
+  td {
+    font-size: 1.1em;/* table 상하간격 */
+    font-weight: 900; /* 역할어 굵기  */
+    border: 1px solid rgba(105, 146, 105, 0.6);
+    padding: 0.1em 0.5em; 
+    color:  var();    /* table 역할어(will) 색 */
+    text-align: left;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin:-10px;
+    border: 0px solid red;    
+   
+  }
+ 
+  .table tr:hover td {
+    background-color: var(--blue);
+    color: var(--gold);
+  }
+  .table-title {
+      
+      font-size: 1.1em; 
+      
+      text-decoration: underline solid 2px; 
+      text-decoration-color: var(--white); 
+      text-underline-position: under;
+      /* text-decoration: underline; */
+      color: var();
+      font-weight: 700;  
+      margin: 0 auto;
+      padding-left:18%;
+      /* border: 1px solid blue; */
+      
+  }
+
+  .td-word {
+    text-align: start;
+    
+    text-decoration: none; 
+    color: var(); 
+    font-size: 0.92em;/* 모바일 역할기능과 작용개념 글자 */
+    border-radius: 19px;
+      }}
+
+
+
+
+@media(max-width:600px){
+        body{
+          font-size: .95em;
+          font-family: 'Open Sans', sans-serif;
+         
+        }
+        table {
+          
+          width: 735px;
+          text-align: left;
+          /* border-collapse: collapse;  */
+          margin: 0 auto;
+          color: var();/* theader 글자색
+          /* overflow-x: hidden; */
+          font-size: 1em; 
+          background-color: none;
+          border-collapse: separate;
+          border-spacing: 5px 6px;
+      
+          }  
+        /* .table {
+          
+          width: 40em;
+          position: relative;    
+          margin-top: 1em;
+          /* margin-left: 0.5%; */
+          
+      
+        } */
+        th {
+          
+          padding: 0.5em 0.2em;
+          text-align: left;
+          background-color: none;
+          color: var();
+        
+          border: 1px solid green; 
+          font-size: 0.95em;   
+        }
+        td {
+          font-size: 1.1em;/* table 상하간격 */
+          font-weight: 900; /* 역할어 굵기  */
+          border: 2px solid rgba(105, 146, 105, 0.6);
+       
+          padding: 0.1em 0.5em; 
+          color:  var(--darkgreen);    /* table 역할어(will) 색 */
+          text-align: left;
+          border-left: 0;
+          border-right: 0;
+          border-top: 0;
+          margin:-10px;
+          /* border: 1px solid red;     */
+         
+        }
+       
+        .table tr:hover td {
+          background-color: var(--blue);
+          color: var(--gold);
+        }
+      
+        .table-title {         
+            font-size: 1.1em; 
+            
+            text-decoration: underline solid 2px; 
+            text-decoration-color: var(--white); 
+            text-underline-position: under;
+            color: var(--gold);
+            font-weight: 700;  
+            margin: 0px auto;
+            padding-right:20%;
+            border: 0px solid blue;
+            
+        }
+     
+        .td-word {
+          text-align: start;
+
+          font-weight: 500;/*  선택메뉴 역할기능과 작용개념 글자 총괄*/
+
+          
+          text-decoration: none; 
+          color: #e4e3e3; 
+          font-size: 1em;/* 모바일 역할기능과 작용개념 글자 */
+          border-radius: 19px;
+          
+            }
+      
+/* sliding 용 */
+.table{
+  width:100%;
+  height: 1px;  /* 없애면 stiky 안됨 */
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px solid red;
+  animation: all .6s ease-out;
+  font-size: 1em;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+            @keyframes all {
+              from{
+               top: 1100px;
+               opacity: 0;
+              }
+              to{
+               top: 2%;
+               opacity: 1;
+            
+              }
+            }
+  
+  
