@@ -1,0 +1,220 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림창</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .reply { display: none; }
+        .reply.active { display: block; }
+    </style>
+        
+     <!--      아이콘  -->
+     <script src="https://kit.fontawesome.com/5d944b71f4.js" crossorigin="anonymous"></script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <!-- 구글폰트  -->
+      
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    
+
+</head>
+
+<body class="bg-gray-100 p-10">
+
+    <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-auto" >
+        <div class="bg-gray-800 text-white p-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">알림창</h1>
+            <!-- <font color="black"><button onclick="toggleAdmin()" id="adminBtn" class="text-xs bg-gray-600 px-2 py-1 rounded">관리자모드 OFF</button></font> -->
+        </div>
+
+        <div id="boardList" class="divide-y divide-gray-200">
+            <!-- <div class="p-4 bg-white-50">
+                <div class="flex items-center gap-2">
+                    <span class="bg-blue-500 text-white text-[10px] px-2 py-0.5 rounded">공지</span>
+                    <span class="font-bold">알려 드립니다</span>
+                </div>
+            </div> -->
+            
+
+            <!-- <div class="item p-4 hover:bg-blue-50 cursor-pointer" onclick="toggleReply(this)">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <span class="text-blue-600 font-bold">&nbsp;&nbsp;&nbsp;1.</span>
+                        <span class="text-gray-800">게시판 이용이 중지되었습니다</span>
+                    </div>
+                    <button onclick="deleteItem(event, this)" class="admin-only hidden text-red-400 text-sm">삭제</button>
+                </div>
+                <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                    <span class="font-bold text-red-500">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관리 미숙으로 서버-이전 중에 삭제되었는데, 
+                    활성화할 필요를 느끼지 못해 당분간....
+                </div>
+            </div> -->
+            
+            
+        </div>
+
+        <!-- <div id="writeForm" class="admin-only hidden p-4 border-t bg-gray-50">
+            <input type="text" id="titleInput" placeholder="질문(제목) 입력" class="w-full mb-2 p-2 border rounded">
+            <textarea id="contentInput" placeholder="답변 내용 입력" class="w-full mb-2 p-2 border rounded"></textarea>
+            <button onclick="addItem()" class="w-full bg-blue-600 text-white py-2 rounded font-bold">공지/질문 등록하기</button>
+        </div> -->
+        <!-- <div class="p-4 bg-gray-800">
+                <div class="flex items-center gap-2">
+                    <span class="bg-green-500 text-white text-[10px] px-2 py-0.5 rounded">저자-메일</span>
+                    <span class="font-bold"></span><font color="white">E-mail : simeribah@naver.com</font>
+                </div>
+            </div> -->
+
+
+
+             <!-- 여기에 세소식 -->
+               <div class="p-4 bg-gray-200"class="item p-4 hover:bg-blue-50 cursor-pointer" onclick="toggleReply(this)">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                    <span class="bg-gray-400 text-white text-[10px] px-2 py-0.5 rounded"> 공지</span>
+                    <span class="font-bold"></span><font color="black" style="cursor:pointer;">게시판이 사라졌습니다</font>
+                </div>
+                    <button onclick="deleteItem(event, this)" class="admin-only hidden text-red-400 text-sm">삭제</button>
+                </div>
+                <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                    <span class="font-bold text-red-500">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;서버를 옮기는 과정에서 관리(실력) 미숙으로...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판 운영의 필요성도...당분간은 공지 용으로</div>
+            </div>
+            <div class="p-4 bg-blue-100"class="item p-4 hover:bg-blue-50 cursor-pointer" onclick="toggleReply(this)">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                    <span class="bg-yellow-400 text-white text-[10px] px-2 py-0.5 rounded">new</span>
+                    <span class="font-bold"></span><font color="black" style="cursor:pointer;">책이 출판되었습니다</font>
+                </div>
+                    <button onclick="deleteItem(event, this)" class="admin-only hidden text-red-400 text-sm">삭제</button>
+                </div>
+                <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                    <span class="font-bold text-red-500">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주문형(POD)으로만 출판되어 있습니다.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;교보, 예스24, 유명서점에서도 주문해야...<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;필요할 때 서점이나, 전자책 출판사 유페이퍼,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종이책 출판사 부끄끄에서 직접 구매하세요.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;유페이퍼, 부끄끄 출판사도 알려진 회사이므로<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가입하셔서 다른 많은 서적도...</div>
+            </div>
+              <div class="p-4 bg-gray-200"class="item p-4 hover:bg-blue-50 cursor-pointer" onclick="toggleReply(this)">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                    <span class="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded">new</span>
+                    <span class="font-bold"></span><font color="black" style="cursor:pointer;">유튜브에서도 보실 수 있습니다</font>
+                </div>
+                    <button onclick="deleteItem(event, this)" class="admin-only hidden text-red-400 text-sm">삭제</button>
+                </div>
+                <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                    <span class="font-bold text-red-500">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;각 페이지 상단에 링크해 두었습니다 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동영상 강의가 필요하시면 클릭해보세요.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PPT 로 제작했고, AI 음성 강의입니다 </div>
+            </div>
+            <div class="p-4 bg-gray-800"class="item p-4 hover:bg-blue-50 cursor-pointer" onclick="toggleReply(this)">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                    <span class="bg-green-500 text-white text-[10px] px-2 py-0.5 rounded">E-mail</span>
+                    <span class="font-bold"></span><font color="white" style="cursor:pointer;">저자-메일 : simeribah@naver.com</font>
+                </div><!-- <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold"><font size="5">&nbsp;&nbsp;*</font></span>
+                        <span class="text-gray-800">연락이 필요하시면 저자 메일로 ..........</span>
+                    </div> -->
+                    <button onclick="deleteItem(event, this)" class="admin-only hidden text-red-400 text-sm">삭제</button>
+                </div>
+                <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                    <span class="font-bold text-red-500">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연락이 필요하시면 메일로 연락을..........행복하세요   </div>
+            </div>
+    </div>
+
+    <script>
+        let isAdmin = false;
+
+        // 관리자 모드 토글 (실제로는 여기서 비밀번호를 묻게 할 수 있습니다)
+        function toggleAdmin() {
+            isAdmin = !isAdmin;
+            const btn = document.getElementById('adminBtn');
+            const adminElements = document.querySelectorAll('.admin-only');
+            
+            if(isAdmin) {
+                btn.innerText = "관리자모드 ON";
+                btn.classList.replace('bg-gray-600', 'bg-red-500');
+                adminElements.forEach(el => el.classList.remove('hidden'));
+            } else {
+                btn.innerText = "관리자모드 OFF";
+                btn.classList.replace('bg-red-500', 'bg-gray-600');
+                adminElements.forEach(el => el.classList.add('hidden'));
+            }
+        }
+
+        // 답변 열기/닫기
+        function toggleReply(element) {
+            const reply = element.querySelector('.reply');
+            reply.classList.toggle('active');
+        }
+
+        // 새 글 추가 (임시 - 새로고침하면 사라짐. 실제 저장하려면 DB 필요)
+        function addItem() {
+            const title = document.getElementById('titleInput').value;
+            const content = document.getElementById('contentInput').value;
+            if(!title || !content) return alert("내용을 입력하세요");
+
+            const newList = `
+                <div class="item p-4 hover:bg-gray-50 cursor-pointer" onclick="toggleReply(this)">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-600 font-bold">Q.</span>
+                            <span class="text-gray-800">${title}</span>
+                        </div>
+                        <button onclick="deleteItem(event, this)" class="admin-only text-red-400 text-sm">삭제</button>
+                    </div>
+                    <div class="reply mt-3 p-4 bg-gray-50 border-t text-sm text-gray-600">
+                        <span class="font-bold text-red-500">A.</span> ${content}
+                    </div>
+                </div>
+            `;
+            document.getElementById('boardList').innerHTML += newList;
+            document.getElementById('titleInput').value = '';
+            document.getElementById('contentInput').value = '';
+        }
+
+        // 삭제 기능
+        function deleteItem(event, btn) {
+            event.stopPropagation(); // 클릭 이벤트 전파 방지
+            if(confirm("정말 삭제하시겠습니까?")) {
+                btn.closest('.item').remove();
+            }
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
